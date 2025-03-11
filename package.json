@@ -17,6 +17,7 @@
     "ethers": "^6.13.5",
     "https-proxy-agent": "^7.0.6",
     "node-fetch": "^3.3.2",
+    "ora": "^8.2.0",
     "socks-proxy-agent": "^8.0.5"
   }
 }
