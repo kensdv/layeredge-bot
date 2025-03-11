@@ -1,2 +1,3 @@
-auto referral and auto connect node layeredge
-TG: t.me/seguronode
+# Layeredge-Bot
+
+Full tutorial in my group https://t.me/seguronode
