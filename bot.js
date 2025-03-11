@@ -122,10 +122,10 @@ class LayerEdgeConnection {
       if (response && response.data && response.data.ip) {
         return response.data.ip;
       } else {
-        return "IP tidak ditemukan";
+        return "IP not found";
       }
     } catch (error) {
-      return "Error mengambil IP";
+      return "Error fetching IP";
     }
   }
 
