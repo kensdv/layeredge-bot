@@ -86,7 +86,7 @@ async function getPublicIP(agent) {
     const data = await res.json();
     return data.ip;
   } catch (err) {
-    console.error(chalk.red(`Gagal mendapatkan public IP: ${err.message}`));
+    console.error(chalk.red(`Failed to get public IP: ${err.message}`));
     return null;
   }
 }
@@ -113,7 +113,7 @@ async function countdownWithMessage(message, seconds) {
 
 async function delayRandomWithCountdown() {
   const delaySeconds = Math.floor(Math.random() * (30 - 10 + 1)) + 10;
-  await countdownWithMessage("Menunggu sebelum memproses wallet berikutnya", delaySeconds);
+  await countdownWithMessage("Waiting before next wallet", delaySeconds);
 }
 
 const configFilePath = './config.json';
@@ -178,7 +178,7 @@ cfonts.say('Seguro Node', {
 });
 console.log(centerText("=== Telegram Channel : Seguro Node ( @seguronode ) ===\n"));
 
-rl.question(chalk.cyan('Gunakan proxy? (y/n): '), (useProxyAnswer) => {
+rl.question(chalk.cyan('Use proxy? (y/n): '), (useProxyAnswer) => {
   if (useProxyAnswer.toLowerCase() === 'y') {
     useProxy = true;
     if (fs.existsSync('proxy.txt')) {
@@ -187,10 +187,10 @@ rl.question(chalk.cyan('Gunakan proxy? (y/n): '), (useProxyAnswer) => {
         .map(line => line.trim())
         .filter(line => line);
       if (proxyList.length === 0) {
-        console.error(chalk.red('File proxy.txt ditemukan, tetapi tidak ada proxy yang valid.'));
+        console.error(chalk.red('File proxy.txt found, but proxy not valid.'));
         process.exit(1);
       }
-      console.log(chalk.yellowBright(`[→] Proxy activated. ${proxyList.length} proxy ditemukan.`));
+      console.log(chalk.yellowBright(`[→] Proxy activated. ${proxyList.length} proxy found.`));
     } else {
       console.error(chalk.red('File proxy.txt not found.'));
       process.exit(1);
