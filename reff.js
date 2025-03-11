@@ -116,7 +116,7 @@ async function delayRandomWithCountdown() {
   await countdownWithMessage("Waiting before next wallet", delaySeconds);
 }
 
-const configFilePath = './config.json';
+const configFilePath = './reffWallet.json';
 let walletData = [];
 if (fs.existsSync(configFilePath)) {
   walletData = JSON.parse(fs.readFileSync(configFilePath, 'utf8'));
@@ -241,7 +241,7 @@ rl.question(chalk.cyan('Use proxy? (y/n): '), (useProxyAnswer) => {
             await verifyReferralCode(reffcode, agent);
             await registerWallet(reffcode, walletDetails.address, agent);
             console.log(chalk.green(`✅ Wallet ${i + 1} processed successfully on attempt ${attempts}!`));
-            console.log(chalk.green(`✅ Account Info Stored in config.json`));
+            console.log(chalk.green(`✅ Account Info Stored in reffWallet.json`));
             console.log(chalk.green(`✅ Reg Successful`));
             success = true;
           } catch (error) {
